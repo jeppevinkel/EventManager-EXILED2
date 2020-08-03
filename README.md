@@ -2,6 +2,7 @@
 
 ## Commands
 Currently only commands for the server console.
+
 Writing `em` or `eventmanager` in the server console wil display all available commands.
 
 ## API
