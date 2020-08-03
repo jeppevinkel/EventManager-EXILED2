@@ -24,14 +24,27 @@ jobs:
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.0.1
       
+    # Runs a single command using the runners shell
+    - name: Setup Nuget
+      uses: warrenbuckley/Setup-Nuget@v1
+      
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+      
+    - name: Restore Packages
+      run: nuget restore EventManager-EXILED2.sln
       
     - name: Download references
       uses: carlosperate/download-file-action@v1.0.3
       with:
         file-url: 'https://www.exiled.host/build_deps/References.zip'
         file-name: 'References.zip'
+        
+    - name: Download EXILED files
+      uses: carlosperate/download-file-action@v1.0.3
+      with:
+        file-url: 'https://github.com/galaxy119/EXILED/releases/download/2.0.10/Exiled.tar.gz'
+        file-name: 'References.tar.gz'
 
     - name: Download 7zip
       uses: carlosperate/download-file-action@v1.0.3
@@ -41,6 +54,9 @@ jobs:
 
     - name: Extract Refs
       run: ./7zip.exe e References.zip -obin/Release -r -y
+      
+    - name: Extract EXILED
+      run: tar xzvf References.tar.gz
 
     - name: Build
       env:
