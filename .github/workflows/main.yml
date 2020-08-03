@@ -62,7 +62,7 @@ jobs:
       env:
         EVENTMANAGER_REFERENCES: ./References
       run: |
-        msbuild EventManager -p:Configuration=release
+        msbuild EventManager -p:Configuration=debug
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
