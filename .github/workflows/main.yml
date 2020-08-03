@@ -31,6 +31,9 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
       
+    - name: Restore Packages
+      run: nuget restore EventManager-EXILED2.sln
+      
     - name: Download references
       uses: carlosperate/download-file-action@v1.0.3
       with:
