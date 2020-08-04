@@ -11,17 +11,21 @@ namespace EventManager
 		private static readonly Lazy<EventManager> LazyInstance = new Lazy<EventManager>(() => new EventManager());
 		public static EventManager Instance => LazyInstance.Value;
 
-		public override PluginPriority Priority { get; } = PluginPriority.First;
+		public override PluginPriority Priority { get; } = PluginPriority.Last;
 
 		private Handlers.Server server;
 
 		public override void OnEnabled()
 		{
+			base.OnEnabled();
+
 			RegisterEvents();
 		}
 
 		public override void OnDisabled()
 		{
+			base.OnDisabled();
+
 			UnregisterEvents();
 		}
 
@@ -39,6 +43,11 @@ namespace EventManager
 			Server.WaitingForPlayers -= server.OnWaitingForPlayers;
 
 			server = null;
+		}
+
+		public override void OnRegisteringCommands()
+		{
+			base.OnRegisteringCommands();
 		}
 
 		private EventManager()

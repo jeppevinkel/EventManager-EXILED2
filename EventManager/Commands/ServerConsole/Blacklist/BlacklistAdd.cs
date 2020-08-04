@@ -2,36 +2,38 @@
 using CommandSystem;
 using HarmonyLib;
 
-namespace EventManager.Commands.ServerConsole.Whitelist
+namespace EventManager.Commands.ServerConsole.Blacklist
 {
 	[CommandHandler(typeof(GameConsoleCommandHandler))]
-	class Add : ICommand
+	class BlacklistAdd : ICommand
 	{
 		public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
 		{
 			if (arguments.IsEmpty())
 			{
-				response = $"Usage: em {Parent.Command} {Command} <event name>";
+				response = $"Usage: em {Parent.Command} {Command} <plugin name>";
 				return false;
 			}
 
 			string s = arguments.Join(delimiter: " ");
 
-			EventManager.Instance.Config.EventWhitelist.Add(s);
+			EventManager.Instance.Config.PluginBlacklist.Add(s);
 			Config.SaveConfigChanges();
 
-			response = $"{s} has been successfully added to the whitelist.";
+			response = $"{s} has been successfully added to the blacklist.";
 			return true;
 		}
 
-		public Add(ICommand parent)
+		public BlacklistAdd() { }
+
+		public BlacklistAdd(ICommand parent)
 		{
 			Parent = parent;
 		}
 
 		public string Command { get; } = "add";
 		public string[] Aliases { get; } = { };
-		public string Description { get; } = "Add an event to the whitelist.";
+		public string Description { get; } = "Add new plugin to the blacklist.";
 		public ICommand Parent = null;
 	}
 }

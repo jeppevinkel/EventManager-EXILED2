@@ -2,10 +2,10 @@
 using CommandSystem;
 using HarmonyLib;
 
-namespace EventManager.Commands.ServerConsole.Queue
+namespace EventManager.Commands.ServerConsole.Whitelist
 {
 	[CommandHandler(typeof(GameConsoleCommandHandler))]
-	class Add : ICommand
+	class WhitelistAdd : ICommand
 	{
 		public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
 		{
@@ -17,21 +17,23 @@ namespace EventManager.Commands.ServerConsole.Queue
 
 			string s = arguments.Join(delimiter: " ");
 
-			EventManager.Instance.Config.EventQueue.Add(s);
+			EventManager.Instance.Config.EventWhitelist.Add(s);
 			Config.SaveConfigChanges();
 
-			response = $"{s} has been successfully added to the event queue.";
+			response = $"{s} has been successfully added to the whitelist.";
 			return true;
 		}
 
-		public Add(ICommand parent)
+		public WhitelistAdd() { }
+
+		public WhitelistAdd(ICommand parent)
 		{
 			Parent = parent;
 		}
 
 		public string Command { get; } = "add";
 		public string[] Aliases { get; } = { };
-		public string Description { get; } = "Add an event to the event queue.";
+		public string Description { get; } = "Add an event to the whitelist.";
 		public ICommand Parent = null;
 	}
 }

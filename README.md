@@ -33,3 +33,7 @@ public static Event GetNextEvent();
 /// </summary>
 /// <returns>List of events.</returns>
 public static ReadOnlyCollection<Event> GetEventList();
+```
+
+## Example Plugin
+[Example Plugin of how to utilize the EventManager.](https://github.com/jeppevinkel/ExampleEvent-EXILED2)

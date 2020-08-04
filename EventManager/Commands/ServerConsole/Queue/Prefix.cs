@@ -13,8 +13,10 @@ namespace EventManager.Commands.ServerConsole.Queue
 
 		public override void LoadGeneratedCommands()
 		{
-			RegisterCommand(new Add(this));
+			RegisterCommand(new QueueAdd(this));
 			RegisterCommand(new Remove(this));
+			RegisterCommand(new Enable(this));
+			RegisterCommand(new Disable(this));
 		}
 
 		protected override bool ExecuteParent(ArraySegment<string> arguments, ICommandSender sender, out string response)

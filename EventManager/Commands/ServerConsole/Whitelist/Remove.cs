@@ -29,6 +29,8 @@ namespace EventManager.Commands.ServerConsole.Whitelist
 			return false;
 		}
 
+		public Remove() { }
+
 		public Remove(ICommand parent)
 		{
 			Parent = parent;

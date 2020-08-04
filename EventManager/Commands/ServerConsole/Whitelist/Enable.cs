@@ -16,6 +16,8 @@ namespace EventManager.Commands.ServerConsole.Whitelist
 			return true;
 		}
 
+		public Enable() { }
+
 		public Enable(ICommand parent)
 		{
 			Parent = parent;

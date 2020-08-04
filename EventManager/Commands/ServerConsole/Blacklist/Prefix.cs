@@ -13,7 +13,7 @@ namespace EventManager.Commands.ServerConsole.Blacklist
 
 		public override void LoadGeneratedCommands()
 		{
-			RegisterCommand(new Add(this));
+			RegisterCommand(new BlacklistAdd(this));
 			RegisterCommand(new Remove(this));
 		}
 

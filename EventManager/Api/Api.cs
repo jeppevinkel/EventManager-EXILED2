@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using EventManager.Api.Interfaces;
 using Exiled.API.Features;
 using Exiled.API.Interfaces;
 
@@ -14,7 +14,7 @@ namespace EventManager.Api
 		/// <param name="plugin">The plugin used for the event.</param>
 		/// <param name="name">Name of the event. (As few words as possible. Preferably a single word)</param>
 		/// <returns>Success status.</returns>
-		public static bool RegisterEvent(IPlugin<IConfig> plugin, string name = null)
+		public static bool RegisterEvent<T>(T plugin, string name = null) where T: IPlugin<IConfig>, IEventPlugin
 		{
 			try
 			{
@@ -25,7 +25,9 @@ namespace EventManager.Api
 					return false;
 				}
 
-				Settings.Events.Add(new Event(plugin, n));
+				Log.Debug($"Registering event ({n}).");
+
+				Settings.Events.Add(new Event(plugin as IEventPlugin, n));
 				return true;
 			}
 			catch (Exception e)

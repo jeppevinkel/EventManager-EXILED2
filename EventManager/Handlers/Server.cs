@@ -34,6 +34,8 @@ namespace EventManager.Handlers
 		{
 			if (Settings.CurrentEvent != null)
 			{
+				Settings.CurrentEvent.EventPlugin.OnEventStarted();
+
 				Settings.DisableBlacklistedPlugins();
 			}
 		}
@@ -42,6 +44,8 @@ namespace EventManager.Handlers
 		{
 			if (Settings.CurrentEvent != null)
 			{
+				Settings.CurrentEvent.EventPlugin.OnEventStopped();
+
 				Settings.EnableBlacklistedPlugins();
 			}
 		}

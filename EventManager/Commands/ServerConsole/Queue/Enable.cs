@@ -16,6 +16,8 @@ namespace EventManager.Commands.ServerConsole.Queue
 			return true;
 		}
 
+		public Enable() { }
+
 		public Enable(ICommand parent)
 		{
 			Parent = parent;
