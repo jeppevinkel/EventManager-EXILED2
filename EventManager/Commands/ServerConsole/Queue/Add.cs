@@ -4,8 +4,7 @@ using HarmonyLib;
 
 namespace EventManager.Commands.ServerConsole.Queue
 {
-	[CommandHandler(typeof(GameConsoleCommandHandler))]
-	class QueueAdd : ICommand
+	class Add : ICommand
 	{
 		public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
 		{
@@ -24,9 +23,9 @@ namespace EventManager.Commands.ServerConsole.Queue
 			return true;
 		}
 
-		public QueueAdd() { }
+		public Add() { }
 
-		public QueueAdd(ICommand parent)
+		public Add(ICommand parent)
 		{
 			Parent = parent;
 		}

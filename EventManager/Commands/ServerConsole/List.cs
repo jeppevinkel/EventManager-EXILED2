@@ -8,7 +8,6 @@ using EventManager.Api;
 
 namespace EventManager.Commands.ServerConsole
 {
-	[CommandHandler(typeof(GameConsoleCommandHandler))]
 	class List : ICommand
 	{
 		public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)

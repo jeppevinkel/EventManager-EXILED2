@@ -14,7 +14,7 @@ namespace EventManager.Api
 		/// <param name="plugin">The plugin used for the event.</param>
 		/// <param name="name">Name of the event. (As few words as possible. Preferably a single word)</param>
 		/// <returns>Success status.</returns>
-		public static bool RegisterEvent<T>(T plugin, string name = null) where T: IPlugin<IConfig>, IEventPlugin
+		public static bool RegisterEvent<T>(this T plugin, string name = null) where T: IPlugin<IConfig>, IEventPlugin
 		{
 			try
 			{

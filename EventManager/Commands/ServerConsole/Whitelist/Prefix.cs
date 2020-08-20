@@ -13,7 +13,7 @@ namespace EventManager.Commands.ServerConsole.Whitelist
 
 		public override void LoadGeneratedCommands()
 		{
-			RegisterCommand(new WhitelistAdd(this));
+			RegisterCommand(new Add(this));
 			RegisterCommand(new Remove(this));
 			RegisterCommand(new Enable(this));
 			RegisterCommand(new Disable(this));

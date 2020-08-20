@@ -4,7 +4,6 @@ using HarmonyLib;
 
 namespace EventManager.Commands.ServerConsole.Whitelist
 {
-	[CommandHandler(typeof(GameConsoleCommandHandler))]
 	class Remove : ICommand
 	{
 		public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)

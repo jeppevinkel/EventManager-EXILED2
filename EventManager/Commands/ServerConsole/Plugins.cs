@@ -8,7 +8,6 @@ using Exiled.API.Interfaces;
 
 namespace EventManager.Commands.ServerConsole
 {
-	[CommandHandler(typeof(GameConsoleCommandHandler))]
 	class Plugins : ICommand
 	{
 		public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)

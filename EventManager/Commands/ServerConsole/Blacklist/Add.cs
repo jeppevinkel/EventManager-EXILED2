@@ -4,8 +4,7 @@ using HarmonyLib;
 
 namespace EventManager.Commands.ServerConsole.Blacklist
 {
-	[CommandHandler(typeof(GameConsoleCommandHandler))]
-	class BlacklistAdd : ICommand
+	class Add : ICommand
 	{
 		public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
 		{
@@ -24,9 +23,9 @@ namespace EventManager.Commands.ServerConsole.Blacklist
 			return true;
 		}
 
-		public BlacklistAdd() { }
+		public Add() { }
 
-		public BlacklistAdd(ICommand parent)
+		public Add(ICommand parent)
 		{
 			Parent = parent;
 		}

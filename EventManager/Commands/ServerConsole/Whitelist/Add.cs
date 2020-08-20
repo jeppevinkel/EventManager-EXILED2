@@ -4,8 +4,7 @@ using HarmonyLib;
 
 namespace EventManager.Commands.ServerConsole.Whitelist
 {
-	[CommandHandler(typeof(GameConsoleCommandHandler))]
-	class WhitelistAdd : ICommand
+	class Add : ICommand
 	{
 		public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
 		{
@@ -24,9 +23,9 @@ namespace EventManager.Commands.ServerConsole.Whitelist
 			return true;
 		}
 
-		public WhitelistAdd() { }
+		public Add() { }
 
-		public WhitelistAdd(ICommand parent)
+		public Add(ICommand parent)
 		{
 			Parent = parent;
 		}

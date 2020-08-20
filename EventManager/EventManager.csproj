@@ -82,7 +82,7 @@
     <Compile Include="Api\Interfaces\IEventPlugin.cs" />
     <Compile Include="Commands\ServerConsole\Queue\Disable.cs" />
     <Compile Include="Commands\ServerConsole\Queue\Enable.cs" />
-    <Compile Include="Commands\ServerConsole\Whitelist\WhitelistAdd.cs" />
+    <Compile Include="Commands\ServerConsole\Whitelist\Add.cs" />
     <Compile Include="Commands\ServerConsole\Whitelist\Disable.cs" />
     <Compile Include="Commands\ServerConsole\Whitelist\Enable.cs" />
     <Compile Include="Commands\ServerConsole\Whitelist\Prefix.cs" />
@@ -92,9 +92,9 @@
     <Compile Include="Commands\ServerConsole\Play.cs" />
     <Compile Include="Commands\ServerConsole\Plugins.cs" />
     <Compile Include="Commands\ServerConsole\Prefix.cs" />
-    <Compile Include="Commands\ServerConsole\Blacklist\BlacklistAdd.cs" />
+    <Compile Include="Commands\ServerConsole\Blacklist\Add.cs" />
     <Compile Include="Commands\ServerConsole\Queue\Remove.cs" />
-    <Compile Include="Commands\ServerConsole\Queue\QueueAdd.cs" />
+    <Compile Include="Commands\ServerConsole\Queue\Add.cs" />
     <Compile Include="Commands\ServerConsole\Queue\Prefix.cs" />
     <Compile Include="Commands\ServerConsole\Blacklist\Remove.cs" />
     <Compile Include="Commands\ServerConsole\Reload.cs" />

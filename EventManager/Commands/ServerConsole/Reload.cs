@@ -7,7 +7,6 @@ using CommandSystem;
 
 namespace EventManager.Commands.ServerConsole
 {
-	[CommandHandler(typeof(GameConsoleCommandHandler))]
 	class Reload : ICommand
 	{
 		public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
